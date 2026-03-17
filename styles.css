@@ -342,7 +342,7 @@ body {
   cursor: pointer;
   position: fixed;
   top: 1rem;
-  right: 1rem:
+  right: 1rem;
   z-index: 4500;
   transition: background-color var(--transition-fast),
               border-color var(--transition-fast),
