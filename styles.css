@@ -405,17 +405,18 @@ main {
 /* Force the hero image to be visible and sized correctly */
 .hero-media {
     width: 100%;
-    max-width: 600px; /* Adjust this to make the shoe bigger/smaller */
+    max-width: 350px; /* Reduced from 600px to make it smaller */
     margin: 0 auto;
     position: relative;
-    z-index: 2; /* Keeps it above the floating sneakers */
+    z-index: 2;
 }
 
 .hero-image {
     width: 100%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5)); /* Adds a nice "pop" effect */
+    /* This makes the shoe "pop" off the dark background */
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.7)); 
 }
 
 /* Hero floating sneakers */
@@ -496,7 +497,13 @@ main {
     z-index: 10000 !important;
   }
 }
-
+@media (max-width: 767px) {
+  /* ... your other mobile styles ... */
+  
+  .hero-media {
+    max-width: 250px; /* Even smaller for mobile screens */
+  }
+}
 /* =========================================
    ABOUT SECTION
    ========================================= */
