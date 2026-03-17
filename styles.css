@@ -340,8 +340,7 @@ width: 100%;
   background-color: #ffffff;
   cursor: pointer;
    position: relative; /* if not already relative/absolute */
-   pointer-events: auto;
-  z-index: 3002; /* above mobile nav when closed */
+  z-index: 3000; /* higher than .site-header and .hero-bg-animation */
   transition: background-color var(--transition-fast),
     border-color var(--transition-fast), transform var(--transition-fast);
 }
@@ -362,12 +361,13 @@ width: 100%;
 
 /* Mobile navigation dropdown */
 .mobile-nav {
-  position: fixed;  /* already fixed */
-  top: 0;
+  display: none;
+  position: absolute; /* float over hero content */
+  top: 100%;          /* just below header */
   left: 0;
   width: 100%;
-  z-index: 3001;    /* higher than hero */
-  pointer-events: auto;  /* make sure it can be clicked */
+  background-color: #111; /* match header bg */
+  z-index: 2500;       /* higher than header and hero */
 }
 
 .mobile-nav.open {
@@ -410,14 +410,8 @@ width: 100%;
   text-align: center;              /* center text */
 }
 
-.hero, 
-.hero-grid, 
 .hero-content {
-  pointer-events: none;  /* allows clicks to pass through mobile nav */
-}
-
-.hero a, .hero button {
-  pointer-events: auto;  /* keeps buttons inside hero clickable */
+  max-width: 800px;               /* optional: limit text width */
 }
 
 .hero-media {
@@ -560,6 +554,7 @@ width: 100%;
   text-transform: uppercase;
   box-shadow: 0 30px 80px rgba(15, 23, 42, 0.4);
 }
+
 
 /* =========================================
    ABOUT SECTION
