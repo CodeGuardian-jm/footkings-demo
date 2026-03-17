@@ -361,13 +361,11 @@ width: 100%;
 
 /* Mobile navigation dropdown */
 .mobile-nav {
-  display: none;
-  position: absolute; /* float over hero content */
-  top: 100%;          /* just below header */
+  position: fixed;  /* fixed so it overlays hero fully */
+  top: 0;
   left: 0;
   width: 100%;
-  background-color: #111; /* match header bg */
-  z-index: 2500;       /* higher than header and hero */
+  z-index: 3001;    /* higher than site-header z-index */
 }
 
 .mobile-nav.open {
@@ -410,8 +408,9 @@ width: 100%;
   text-align: center;              /* center text */
 }
 
-.hero-content {
-  max-width: 800px;               /* optional: limit text width */
+.hero-grid, .hero-content {
+  position: relative;
+  z-index: 1; /* keep below nav and header */
 }
 
 .hero-media {
