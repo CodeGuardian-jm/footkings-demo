@@ -327,7 +327,7 @@ width: 100%;
 }
 
 /* Mobile nav toggle (hamburger) */
-.nav-toggle {
+ .nav-toggle {
   display: none; /* shown on small screens via media query */
   flex-direction: column;
   justify-content: center;
@@ -339,6 +339,8 @@ width: 100%;
   border: 1px solid rgba(148, 163, 184, 0.6);
   background-color: #ffffff;
   cursor: pointer;
+   position: relative; /* if not already relative/absolute */
+  z-index: 1001; /* higher than .site-header and .hero-bg-animation */
   transition: background-color var(--transition-fast),
     border-color var(--transition-fast), transform var(--transition-fast);
 }
