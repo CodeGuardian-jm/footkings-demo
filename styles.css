@@ -329,7 +329,7 @@ body {
 
 /* Mobile nav toggle (hamburger) */
 .nav-toggle {
-  display: none; /* shown on small screens via media query */
+  display: none; /* only shown on mobile via media query */
   flex-direction: column;
   justify-content: center;
   gap: 4px;
@@ -342,13 +342,16 @@ body {
   cursor: pointer;
   position: fixed;
   top: 1rem;
-  right: 1rem;
+  right: 1rem; /* FIXED */
   z-index: 4500;
   transition: background-color var(--transition-fast),
               border-color var(--transition-fast),
               transform var(--transition-fast);
 }
 
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+}
 .nav-toggle:hover {
   background-color: var(--color-primary-soft);
   border-color: var(--color-primary);
