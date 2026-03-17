@@ -411,7 +411,9 @@ body {
   padding-bottom: var(--space-12);
   text-align: center;
   overflow: hidden; /* keep sneakers contained */
+  z-index: 1;
 }
+
 main {
   position: relative; /* ensures header fixed z-index works */
   z-index: 0;
