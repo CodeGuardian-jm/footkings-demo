@@ -340,7 +340,8 @@ width: 100%;
   background-color: #ffffff;
   cursor: pointer;
    position: relative; /* if not already relative/absolute */
-  z-index: 3000; /* higher than .site-header and .hero-bg-animation */
+   pointer-events: auto;
+  z-index: 3002; /* above mobile nav when closed */
   transition: background-color var(--transition-fast),
     border-color var(--transition-fast), transform var(--transition-fast);
 }
@@ -361,11 +362,12 @@ width: 100%;
 
 /* Mobile navigation dropdown */
 .mobile-nav {
-  position: fixed;  /* fixed so it overlays hero fully */
+  position: fixed;  /* already fixed */
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 3001;    /* higher than site-header z-index */
+  z-index: 3001;    /* higher than hero */
+  pointer-events: auto;  /* make sure it can be clicked */
 }
 
 .mobile-nav.open {
@@ -408,9 +410,14 @@ width: 100%;
   text-align: center;              /* center text */
 }
 
-.hero-grid, .hero-content {
-  position: relative;
-  z-index: 1; /* keep below nav and header */
+.hero, 
+.hero-grid, 
+.hero-content {
+  pointer-events: none;  /* allows clicks to pass through mobile nav */
+}
+
+.hero a, .hero button {
+  pointer-events: auto;  /* keeps buttons inside hero clickable */
 }
 
 .hero-media {
